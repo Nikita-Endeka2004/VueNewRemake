@@ -13,13 +13,16 @@
     <div class="row" id="app">
         <div class="col-md-12">
 
+            <h3>{{inn}}</h3>
+
             <fieldset>
                 <legend>INN</legend>
                 <label for="name">Number</label>
                 <input v-model="inn" type="text" id="numberInput" value="">
                 <h3></h3>
                 <h3>Дата рождения: {{birthday}}</h3>
-                <h3>Пол: </h3>
+                <h3>Возраст: {{age}}</h3>
+                <h3>Пол: {{sex.gender}}</h3>
                 <h3>Знак Зодиака: </h3>
 
         </fieldset>

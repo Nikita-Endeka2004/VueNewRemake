@@ -1,13 +1,13 @@
 
 import { createApp } from "../../node_modules/vue/dist/vue.esm-browser.prod.js";
 
-    createApp = ({
+    createApp({
         data(){
             return{
 
                 inn: '',
                 sex: {check: false, gender: 'Женьщина'},
-                birthday: new Date(1900, 0, 0),
+                birthday: '',
                 age: 0,
                 trueInn: false
 
@@ -21,6 +21,7 @@ import { createApp } from "../../node_modules/vue/dist/vue.esm-browser.prod.js";
                 num = num.split('');
                 let DateBirthdayInNumber = '';
                 let dateToday = new Date();
+                let Birthday = new Date(1900, 0, 0);
 
                 if((num[8] == 8) || (num[8] == 1) || ((num[8] % 2) == 0)){
 
@@ -31,8 +32,10 @@ import { createApp } from "../../node_modules/vue/dist/vue.esm-browser.prod.js";
                     }
 
                     DateBirthdayInNumber = DateBirthdayInNumber / 1;
-                    this.birthday.setDate( this.birthday.getDate() + DateBirthdayInNumber);
-                    this.age = dateToday.getFullYear() - this.birthday.getFullYear();
+                    Birthday.setDate( Birthday.getDate() + DateBirthdayInNumber);
+                    this.birthday = Birthday.getDate() + '.' + Birthday.getMonth() + '.' + Birthday.getFullYear();
+                    console.log(this.birthday, 'dfgsdfgsdfg');
+                    this.age = dateToday.getFullYear() - Birthday.getFullYear();
                 }else{
 
                     this.sex.map(item => item.cheak = true);
@@ -42,8 +45,9 @@ import { createApp } from "../../node_modules/vue/dist/vue.esm-browser.prod.js";
                     }
         
                     DateBirthdayInNumber = DateBirthdayInNumber / 1;
-                    this.birthday.setDate( this.birthday.getDate() + DateBirthdayInNumber);
-                    this.age = dateToday.getFullYear() - this.birthday.getFullYear();
+                    Birthday.setDate( Birthday.getDate() + DateBirthdayInNumber);
+                    this.birthday = Birthday.getDate() + '.' + Birthday.getMonth() + '.' + Birthday.getFullYear();
+                    this.age = dateToday.getFullYear() - Birthday.getFullYear();
                 }
 
             },
