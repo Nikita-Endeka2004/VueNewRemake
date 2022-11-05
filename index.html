@@ -13,21 +13,20 @@
     <div class="row" id="app">
         <div class="col-md-12">
 
-            <h3>{{inn}}</h3>
-
             <fieldset>
+                
                 <legend>INN</legend>
                 <label for="name">Number</label>
                 <input v-model="inn" type="text" id="numberInput" value="">
-                <h3>{{trueInn}}</h3>
-                <h3>Дата рождения: </h3>
-                <h3>Возраст: </h3>
-                <h3>Пол: </h3>
-                <h3>Знак Зодиака: </h3>
-
-        </fieldset>
+                <h3>{{isCorrect}}</h3>
+                <h3>Дата рождения: {{forInput}}</h3>
+                <h3>Пол: {{forSex}}</h3>
+                <h3>Знак: {{forZodiac}}</h3>
+              
+            </fieldset>
         </div>
     </div>
+
     
 </body>
 </html>
